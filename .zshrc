@@ -18,12 +18,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)" # echo 'eval "$(/opt/homebrew/bin/brew
 export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 
 # Print terminal color spectrum with codes
-function colorswatchbg() {
-  for i in {16..255}
+function colorswatch() {
+  for i in {0..255};
   do
-    printf "\e[48;5;${i}m%03d" $i;
-    printf '\e[0m';
-    [ ! $((($i - 15) % 6)) -eq 0 ] && printf ' ' || printf '\n'
+    print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'};
   done
 }
 
