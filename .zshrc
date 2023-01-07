@@ -1,44 +1,3 @@
-### Add colors to terminal
-export CLICOLOR=1
-
-### Aliases
-alias l="ls -CF"
-alias la="ls -A"
-alias ll="ls -alF"
-alias code="open -a Visual\ Studio\ Code"
-
-### Use nano as the default editor (instead of vim)
-export EDITOR=nano
-export VISUAL="$EDITOR"
-
-# Add Homebrew to PATH
-eval "$(/opt/homebrew/bin/brew shellenv)" # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-
-# Add Node.js v16 to PATH
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-
-# Print terminal color spectrum with codes
-function colorswatch() {
-  for i in {0..255};
-  do
-    print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'};
-  done
-}
-
-# Print text with normal and bright colors
-function colorswatchfg() {
-  echo -e "\033[0;39mNC (No color)"
-  echo -e "\033[0;30mBLACK   \t \033[1;90mBRIGHT_BLACK"
-  echo -e "\033[0;31mRED     \t \033[1;91mBRIGHT_RED"
-  echo -e "\033[0;32mGREEN   \t \033[1;92mBRIGHT_GREEN"
-  echo -e "\033[0;33mYELLOW  \t \033[1;93mBRIGHT_YELLOW"
-  echo -e "\033[0;34mBLUE    \t \033[1;94mBRIGHT_BLUE"
-  echo -e "\033[0;35mMAGENTA \t \033[1;95mBRIGHT_MAGENTA"
-  echo -e "\033[0;36mCYAN    \t \033[1;96mBRIGHT_CYAN"
-  echo -e "\033[0;37mWHITE   \t \033[1;97mBRIGHT_WHITE"
-  # normal background colors are in the 40's range, and bright background colors in the 100's range
-}
-
 ############################
 ### PROMPT CONFIGURATION ###
 ############################
@@ -144,3 +103,65 @@ setprompt () {
 
 # Add setprompt to the list of functions that'll be executed before each prompt
 precmd_functions+=(setprompt)
+
+### Powerlevel10K
+# source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+### Starship
+# eval "$(starship init zsh)"
+
+################################
+### END PROMPT CONFIGURATION ###
+################################
+
+
+### Add colors to terminal
+export CLICOLOR=1
+
+### Aliases
+alias l="ls -CF"
+alias la="ls -A"
+alias ll="ls -alF"
+alias code="open -a Visual\ Studio\ Code"
+
+### Use nano as the default editor (instead of vim)
+export EDITOR=nano
+export VISUAL="$EDITOR"
+
+# Add Homebrew to PATH
+eval "$(/opt/homebrew/bin/brew shellenv)" # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+
+# Add Node.js v16 to PATH
+export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+
+# Print terminal color spectrum with codes
+function colorswatch() {
+  for i in {0..255};
+  do
+    print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'};
+  done
+}
+
+# Print text with normal and bright colors
+function colorswatchfg() {
+  echo -e "\033[0;39mNC (No color)"
+  echo -e "\033[0;30mBLACK   \t \033[1;90mBRIGHT_BLACK"
+  echo -e "\033[0;31mRED     \t \033[1;91mBRIGHT_RED"
+  echo -e "\033[0;32mGREEN   \t \033[1;92mBRIGHT_GREEN"
+  echo -e "\033[0;33mYELLOW  \t \033[1;93mBRIGHT_YELLOW"
+  echo -e "\033[0;34mBLUE    \t \033[1;94mBRIGHT_BLUE"
+  echo -e "\033[0;35mMAGENTA \t \033[1;95mBRIGHT_MAGENTA"
+  echo -e "\033[0;36mCYAN    \t \033[1;96mBRIGHT_CYAN"
+  echo -e "\033[0;37mWHITE   \t \033[1;97mBRIGHT_WHITE"
+  # normal background colors are in the 40's range, and bright background colors in the 100's range
+}
