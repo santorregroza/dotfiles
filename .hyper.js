@@ -10,7 +10,7 @@ module.exports = {
         // default font size in pixels for all tabs
         fontSize: 12,
         // font family with optional fallbacks
-        fontFamily: '"MesloLGS NF", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+        fontFamily: '"JetBrainsMono Nerd Font", "MesloLGS NF", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
         // default font weight: 'normal' or 'bold'
         fontWeight: 'normal',
         // font weight for bold characters: 'normal' or 'bold'
@@ -38,7 +38,8 @@ module.exports = {
         backgroundColor: '#000000E6',
         // backgroundColor: '#EEEEEEE6',
         // terminal selection color
-        selectionColor: 'rgba(248,28,229,0.3)',
+        // selectionColor: 'rgba(248,28,229,0.3)',
+        selectionColor: 'rgba(162,119,255,0.3)',
         // border color (window, tabs)
         borderColor: '#000000',
         // borderColor: '#EEEEEE',
@@ -138,13 +139,6 @@ module.exports = {
         // for advanced config flags please refer to https://hyper.is/#cfg
         theme: {
             variant: 'core', // core, moon, dawn, dusk
-        },
-        hyperline: {                                                                 
-            plugins: [                                                                 
-              "ip",                                                                    
-              "cpu",                                                                   
-              "spotify"                                                                
-            ]                                                                          
         },
         hypest: {
             darkmode: false,
