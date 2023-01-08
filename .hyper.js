@@ -41,6 +41,7 @@ module.exports = {
         selectionColor: 'rgba(248,28,229,0.3)',
         // border color (window, tabs)
         borderColor: '#000000',
+        // borderColor: '#EEEEEE',
         // custom CSS to embed in the main window
         css: '',
         // custom CSS to embed in the terminal window
