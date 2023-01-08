@@ -7,7 +7,7 @@ $directory\
 [](fg:#5896FF bg:#8700FF)\
 $git_branch\
 $git_status\
-[](fg:#8700FF bg:#DCCB71)\
+[](fg:#8700FF bg:#DFC16D)\
 $java\
 $golang\
 $rust\
@@ -24,7 +24,7 @@ $elixir\
 $haskell\
 $package\
 $docker_context\
-[](fg:#DCCB71 bg:#DFDFDF)\
+[](fg:#DFC16D bg:#DFDFDF)\
 $time\
 [ ](fg:#DFDFDF)\
 \n[╰─]()\
@@ -84,78 +84,78 @@ format = '[$all_status$ahead_behind ]($style)'
 
 [java]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [golang]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [c]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [conda]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [rlang]
 symbol = "ﳒ"
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [elixir]
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 format = '[ $symbol ($version) ]($style)'
 
 [package]
 disabled = false
 symbol = ""
-style = "fg:#161616 bg:#DCCB71"
+style = "fg:#161616 bg:#DFC16D"
 version_format = 'v${raw}'
 format = '[ $symbol $version ]($style)'
 
