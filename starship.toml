@@ -27,8 +27,8 @@ $docker_context\
 [](fg:#DFC16D bg:#DFDFDF)\
 $time\
 [ ](fg:#DFDFDF)\
-\n[╰─]()\
 $status\
+\n[╰─]()\
 $character
 """
 
@@ -41,9 +41,9 @@ continuation_prompt = "▶▶"
 # represents the current operating system
 [os]
 disabled = true # Disabled by default
-style = "bg:#262626"
+style = "fg:#EEEEEE bg:#262626"
 [os.symbols]
-Macos = "  "
+Macos = " "
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
@@ -169,11 +169,17 @@ format = '[ $symbol $context ]($style) $path'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "fg:#161616 bg:#DFDFDF"
-format = '[  $time ]($style)'
+format = '[  $time ]($style)'
 
 [status]
 style = 'fg:#EEEEEE bg:#FF4F58'
-symbol = ''
-format = '[[](fg:#FF4F58)$status$common_meaning$signal_name[](fg:#FF4F58)]($style) '
+#success_symbol = ' '
+symbol = ' '
+recognize_signal_code = true
+not_executable_symbol = ' '
+not_found_symbol = ' '
+sigint_symbol = '⚡'
+signal_symbol = ' '
+format = '[[](fg:#FF4F58)$symbol$status[](fg:#FF4F58)]($style)'
 map_symbol = true
 disabled = false
