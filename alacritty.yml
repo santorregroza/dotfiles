@@ -1,0 +1,88 @@
+window:
+  padding:
+    x: 10
+    y: 0
+  class:
+    instance: Alacritty
+    general: Alacritty
+  # decorations: transparent
+  opacity: 0.8
+
+scrolling:
+  history: 1000
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: false
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+  size: 12
+
+draw_bold_text_with_bright_colors: true
+custom_cursor_colors: true
+
+colors:
+  primary:
+    background: "#000000"
+    foreground: "#EEEEEE"
+  cursor:
+    text: CellForeground
+    cursor: "#A277FF"
+  selection:
+    text: CellForeground
+    background: "#A277FF"
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#A277FF'
+  header_bar:
+    background: '#A277FF'
+    foreground: "#000000"
+  footer_bar:
+    background: '#A277FF'
+    foreground: "#000000"
+  normal:
+    black: "#323232"
+    red: "#F14B41"
+    green: "#6DC9A6"
+    yellow: "#F7A520"
+    blue: "#5796FF"
+    magenta: "#AA79D0"
+    cyan: "#87CFE4"
+    white: "#E7E7E7"
+  bright:
+    black: "#323232"
+    red: "#F14B41"
+    green: "#6DC9A6"
+    yellow: "#F7A520"
+    blue: "#5796FF"
+    magenta: "#AA79D0"
+    cyan: "#87CFE4"
+    white: "#E7E7E7"
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+    blink-interval: 750
+  unfocused_hollow: false
+
+selection:
+  save_to_clipboard: false
+
+live_config_reload: true
+
+shell:
+  program: /bin/zsh
+
