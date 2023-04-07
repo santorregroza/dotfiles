@@ -1,6 +1,9 @@
 window:
+  dimensions:
+    columns: 180
+    lines: 40
   padding:
-    x: 10
+    x: 15
     y: 0
   class:
     instance: Alacritty
@@ -45,12 +48,12 @@ colors:
   search:
     matches:
       foreground: CellBackground
-      background: '#A277FF'
+      background: "#A277FF"
   header_bar:
-    background: '#A277FF'
+    background: "#A277FF"
     foreground: "#000000"
   footer_bar:
-    background: '#A277FF'
+    background: "#A277FF"
     foreground: "#000000"
   normal:
     black: "#323232"
@@ -85,4 +88,6 @@ live_config_reload: true
 
 shell:
   program: /bin/zsh
-
+  args:
+    - "-i"
+    - "--login"
