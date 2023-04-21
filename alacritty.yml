@@ -11,11 +11,13 @@ window:
   # decorations: transparent
   opacity: 0.8
 
-scrolling:
-  history: 1000
-  multiplier: 3
-  faux_multiplier: 3
-  auto_scroll: false
+live_config_reload: true
+
+shell:
+  program: /bin/zsh
+  args:
+    - "-i"
+    - "--login"
 
 font:
   normal:
@@ -32,6 +34,22 @@ font:
     style: Bold Italic
   size: 12
 
+scrolling:
+  history: 1000
+  multiplier: 3
+  faux_multiplier: 3
+  auto_scroll: false
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+    blink-interval: 750
+  unfocused_hollow: false
+
+selection:
+  save_to_clipboard: false
+
 draw_bold_text_with_bright_colors: true
 custom_cursor_colors: true
 
@@ -45,6 +63,7 @@ colors:
   selection:
     text: CellForeground
     background: "#A277FF"
+    foreground: "#DFC16D"
   search:
     matches:
       foreground: CellBackground
@@ -73,21 +92,3 @@ colors:
     magenta: "#AA79D0"
     cyan: "#87CFE4"
     white: "#E7E7E7"
-
-cursor:
-  style:
-    shape: Block
-    blinking: Off
-    blink-interval: 750
-  unfocused_hollow: false
-
-selection:
-  save_to_clipboard: false
-
-live_config_reload: true
-
-shell:
-  program: /bin/zsh
-  args:
-    - "-i"
-    - "--login"
