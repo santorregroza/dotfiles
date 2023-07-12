@@ -2,6 +2,7 @@ format = """
 [╭─]()[](#262626)\
 $os\
 $username\
+$sudo\
 [](fg:#262626 bg:#5896FF)\
 $directory\
 [](fg:#5896FF bg:#8700FF)\
@@ -9,6 +10,7 @@ $git_branch\
 $git_status\
 [](fg:#8700FF bg:#DFC16D)\
 $java\
+$kotlin\
 $golang\
 $rust\
 $nodejs\
@@ -32,7 +34,7 @@ $status\
 $character
 """
 
-continuation_prompt = "▶▶"
+continuation_prompt = '▶▶'
 
 # Disable the blank line at the start of the prompt
 # add_newline = false
@@ -41,134 +43,149 @@ continuation_prompt = "▶▶"
 # represents the current operating system
 [os]
 disabled = true # Disabled by default
-style = "fg:#EEEEEE bg:#262626"
+style = 'fg:#EEEEEE bg:#262626'
 [os.symbols]
-Macos = " "
+Macos = ' '
 
 # You can also replace your username with a neat symbol like   or disable this
 # and use the os module below
 [username]
 show_always = true
-style_user = "fg:#EEEEEE bg:#262626"
-style_root = "fg:#EEEEEE bg:#262626"
+style_user = 'fg:#EEEEEE bg:#262626'
+style_root = 'fg:#EEEEEE bg:#262626'
 format = '[$user ]($style)'
 disabled = false
 
+[sudo]
+style = 'fg:#EEEEEE bg:#262626'
+symbol = ' '
+format = '[$symbol]($style)'
+disabled = false
+
 [directory]
-style = "fg:#EEEEEE bg:#5896FF"
-format = "[ $path ]($style)"
+style = 'fg:#EEEEEE bg:#5896FF'
+format = '[ $path ]($style)'
 truncation_length = 3
-truncation_symbol = "…/"
+truncation_symbol = '…/'
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+'Documents' = ' '
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
 # Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
+# 'Important Documents' = '  '
+# will not be replaced, because 'Documents' was already substituted before.
+# So either put 'Important Documents' before 'Documents' or use the substituted version:
+# 'Important  ' = '  '
 
 [git_branch]
-symbol = ""
-style = "fg:#EEEEEE bg:#8700FF"
+symbol = ''
+style = 'fg:#EEEEEE bg:#8700FF'
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "fg:#EEEEEE bg:#8700FF"
+style = 'fg:#EEEEEE bg:#8700FF'
 format = '[$all_status$ahead_behind ]($style)'
 
 [java]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
+detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
+
+[kotlin]
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
+format = '[ $symbol ($version) ]($style)'
+detect_extensions = ['kt', 'kts', 'gradle', 'jar']
+detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
+disabled = true
 
 [golang]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [rust]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [c]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [python]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [conda]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [rlang]
-symbol = "ﳒ"
-style = "fg:#161616 bg:#DFC16D"
+symbol = 'ﳒ'
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [scala]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [elixir]
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
-symbol = " "
-style = "fg:#161616 bg:#DFC16D"
+symbol = ' '
+style = 'fg:#161616 bg:#DFC16D'
 format = '[ $symbol ($version) ]($style)'
 
 [package]
 disabled = false
-symbol = ""
-style = "fg:#161616 bg:#DFC16D"
+symbol = ''
+style = 'fg:#161616 bg:#DFC16D'
 version_format = 'v${raw}'
 format = '[ $symbol $version ]($style)'
 
 [docker_context]
 disabled = true
-symbol = ""
-style = "bg:#AFD7FF"
+symbol = ''
+style = 'bg:#AFD7FF'
 format = '[ $symbol $context ]($style) $path'
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "fg:#161616 bg:#DFDFDF"
+time_format = '%R' # Hour:Minute Format
+style = 'fg:#161616 bg:#DFDFDF'
 format = '[  $time ]($style)'
 
 [status]
