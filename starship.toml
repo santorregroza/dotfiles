@@ -1,75 +1,77 @@
+# Set the prompt
 format = """
-[╭─]()[](#262626)\
+[╭─]()[](black)\
 $os\
 $username\
 $sudo\
-[](fg:#262626 bg:#5896FF)\
+[](fg:black bg:blue)\
 $directory\
-[](fg:#5896FF bg:#8700FF)\
+[](fg:blue bg:purple)\
 $git_branch\
 $git_status\
-[](fg:#8700FF bg:#DFC16D)\
-$java\
-$kotlin\
-$golang\
-$rust\
-$nodejs\
+[](fg:purple bg:gold)\
 $c\
+$elm\
+$elixir\
+$golang\
+$haskell\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
 $python\
 $conda\
 $rlang\
+$rust\
 $scala\
-$julia\
-$elm\
-$nim\
-$elixir\
-$haskell\
 $package\
 $docker_context\
-[](fg:#DFC16D bg:#DFDFDF)\
+[](fg:gold bg:white)\
 $time\
-[ ](fg:#DFDFDF)\
+[ ](fg:white)\
 $status\
 \n[╰─]()\
 $character
 """
 
-continuation_prompt = '▶▶'
+# Other prompt-wide config
+right_format = ''
+continuation_prompt = '╰─❯ '
+scan_timeout = 50
+command_timeout = 1000
+add_newline = true
+# Set current color palette
+palette = 'classy'
 
-# Disable the blank line at the start of the prompt
-# add_newline = false
-
-# An alternative to the username module which displays a symbol that
-# represents the current operating system
+# A symbol that represents the current operating system
 [os]
 disabled = true # Disabled by default
-style = 'fg:#EEEEEE bg:#262626'
+style = 'fg:light-fg bg:black'
 [os.symbols]
 Macos = ' '
 
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
+# Username
 [username]
 show_always = true
-style_user = 'fg:#EEEEEE bg:#262626'
-style_root = 'fg:#EEEEEE bg:#262626'
+style_user = 'fg:light-fg bg:black'
+style_root = 'fg:light-fg bg:black'
 format = '[$user ]($style)'
 disabled = false
 
 [sudo]
-style = 'fg:#EEEEEE bg:#262626'
+style = 'fg:light-fg bg:black'
 symbol = ' '
 format = '[$symbol]($style)'
 disabled = false
 
+# Current directory
 [directory]
-style = 'fg:#EEEEEE bg:#5896FF'
+style = 'fg:light-fg bg:blue'
 format = '[ $path ]($style)'
 truncation_length = 3
 truncation_symbol = '…/'
 
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
 'Documents' = ' '
 'Downloads' = ' '
@@ -81,115 +83,120 @@ truncation_symbol = '…/'
 # So either put 'Important Documents' before 'Documents' or use the substituted version:
 # 'Important  ' = '  '
 
+# Git section
 [git_branch]
 symbol = ''
-style = 'fg:#EEEEEE bg:#8700FF'
+style = 'fg:light-fg bg:purple'
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = 'fg:#EEEEEE bg:#8700FF'
+style = 'fg:light-fg bg:purple'
 format = '[$all_status$ahead_behind ]($style)'
 
-[java]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
-
-[kotlin]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-detect_extensions = ['kt', 'kts', 'gradle', 'jar']
-detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
-disabled = true
-
-[golang]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[rust]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[nodejs]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
+# Languages and runtimes section
 [c]
 symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[python]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[conda]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[rlang]
-symbol = 'ﳒ'
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[scala]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
+style = 'fg:dark-fg bg:gold'
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
 symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
-format = '[ $symbol ($version) ]($style)'
-
-[nim]
-symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
+style = 'fg:dark-fg bg:gold'
 format = '[ $symbol ($version) ]($style)'
 
 [elixir]
 symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[golang]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = ' '
-style = 'fg:#161616 bg:#DFC16D'
+style = 'fg:dark-fg bg:gold'
 format = '[ $symbol ($version) ]($style)'
 
+[java]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
+
+[julia]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[kotlin]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+detect_extensions = ['kt', 'kts', 'gradle', 'jar']
+detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
+
+[nim]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[conda]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[rlang]
+symbol = 'ﳒ'
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+[scala]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
+# Package section
 [package]
 disabled = false
 symbol = ''
-style = 'fg:#161616 bg:#DFC16D'
+style = 'fg:dark-fg bg:gold'
 version_format = 'v${raw}'
 format = '[ $symbol $version ]($style)'
 
+# Docker section
 [docker_context]
 disabled = true
-symbol = ''
+symbol = ' '
 style = 'bg:#AFD7FF'
 format = '[ $symbol $context ]($style) $path'
 
+# Time of command execution
 [time]
 disabled = false
 time_format = '%R' # Hour:Minute Format
-style = 'fg:#161616 bg:#DFDFDF'
+style = 'fg:dark-fg bg:white'
 format = '[  $time ]($style)'
 
+# Status code of previous command
 [status]
-style = 'fg:#EEEEEE bg:#FF4F58'
+style = 'fg:light-fg bg:red'
 #success_symbol = ' '
 symbol = ' '
 recognize_signal_code = true
@@ -197,6 +204,25 @@ not_executable_symbol = ' '
 not_found_symbol = ' '
 sigint_symbol = '⚡'
 signal_symbol = ' '
-format = '[[](fg:#FF4F58)$symbol$status[](fg:#FF4F58)]($style)'
+format = '[[](fg:red)$symbol$status[](fg:red)]($style)'
 map_symbol = true
 disabled = false
+
+# Character in prompt before user input
+[character]
+success_symbol = '[❯](fg:bold green)'
+error_symbol = '[❯](fg:bold red)'
+
+# Define custom color palettes
+[palettes.classy]
+black = '#262626'
+red = '#FF4F58'
+green = '#6DC9A6'
+blue = '#5896FF' 
+yellow = '#DFC16D'
+purple = '#8700FF' 
+# cyan = ''
+white = '#DFDFDF'
+gold = '#DFC16D'
+light-fg = '#EEEEEE'
+dark-fg = '#161616'
