@@ -63,7 +63,7 @@ colors:
   selection:
     text: CellForeground
     background: "#A277FF"
-    foreground: "#DFC16D"
+    foreground: "#262626"
   search:
     matches:
       foreground: CellBackground
@@ -76,19 +76,19 @@ colors:
     foreground: "#000000"
   normal:
     black: "#323232"
-    red: "#F14B41"
+    red: "#FF4F58"
     green: "#6DC9A6"
-    yellow: "#F7A520"
-    blue: "#5796FF"
+    yellow: "#DFC16D"
+    blue: "#5896FF"
     magenta: "#AA79D0"
     cyan: "#87CFE4"
-    white: "#E7E7E7"
+    white: "#DFDFDF"
   bright:
     black: "#323232"
-    red: "#F14B41"
+    red: "#FF4F58"
     green: "#6DC9A6"
-    yellow: "#F7A520"
-    blue: "#5796FF"
+    yellow: "#DFC16D"
+    blue: "#5896FF"
     magenta: "#AA79D0"
     cyan: "#87CFE4"
-    white: "#E7E7E7"
+    white: "#DFDFDF"
