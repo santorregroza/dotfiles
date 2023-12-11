@@ -1,6 +1,6 @@
-############################
-### PROMPT CONFIGURATION ###
-############################
+############################################################################################################################################
+########################################################### PROMPT CONFIGURATION ###########################################################
+############################################################################################################################################
 
 # Enable substitution in the prompt
 setopt PROMPT_SUBST
@@ -102,7 +102,7 @@ setprompt () {
 }
 
 # Add setprompt to the list of functions that'll be executed before each prompt
-precmd_functions+=(setprompt)
+# precmd_functions+=(setprompt)
 
 ### Powerlevel10K
 # source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
@@ -117,12 +117,9 @@ precmd_functions+=(setprompt)
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-### Starship
-# eval "$(starship init zsh)"
-
-################################
-### END PROMPT CONFIGURATION ###
-################################
+################################################################################################################################################
+########################################################### END PROMPT CONFIGURATION ###########################################################
+################################################################################################################################################
 
 
 ### Add colors to terminal
@@ -138,11 +135,20 @@ alias code="open -a Visual\ Studio\ Code"
 export EDITOR=nano
 export VISUAL="$EDITOR"
 
+### Enable using the $EDITOR to edit the current terminal input
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+
 # Add Homebrew to PATH
 eval "$(/opt/homebrew/bin/brew shellenv)" # echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 
 # Add Node.js v16 to PATH
-export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+path+=("/opt/homebrew/opt/node@16/bin") # append
+
+# Add Python 3.12 (as python / python3) to PATH
+# path+=("/opt/homebrew/opt/python@3.12/libexec/bin") # append
+path=("/opt/homebrew/opt/python@3.12/libexec/bin" $path) # prepend
 
 # Print terminal color spectrum with codes
 function colorswatch() {
@@ -165,3 +171,9 @@ function colorswatchfg() {
   echo -e "\033[0;37mWHITE   \t \033[1;97mBRIGHT_WHITE"
   # normal background colors are in the 40's range, and bright background colors in the 100's range
 }
+
+# Finally, export the updated PATH
+export PATH
+
+### Activate Starship prompt
+eval "$(starship init zsh)"
