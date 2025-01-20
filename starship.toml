@@ -61,7 +61,7 @@ disabled = false
 
 [sudo]
 style = 'fg:light-fg bg:black'
-symbol = ' '
+symbol = ' '
 format = '[$symbol]($style)'
 disabled = false
 
@@ -73,15 +73,16 @@ truncation_length = 3
 truncation_symbol = '…/'
 
 [directory.substitutions]
-'Documents' = ' '
+'Documents' = '󰈙 '
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '
+'dev' = '󰲋 '
 # Keep in mind that the order matters. For example:
-# 'Important Documents' = '  '
+# 'Important Documents' = ' 󰈙 '
 # will not be replaced, because 'Documents' was already substituted before.
 # So either put 'Important Documents' before 'Documents' or use the substituted version:
-# 'Important  ' = '  '
+# 'Important 󰈙 ' = ' 󰈙 '
 
 # Git section
 [git_branch]
@@ -137,11 +138,6 @@ format = '[ $symbol ($version) ]($style)'
 detect_extensions = ['kt', 'kts', 'gradle', 'jar']
 detect_files = ['pom.xml', 'build.gradle.kts', 'build.sbt', '.java-version', 'deps.edn', 'project.clj', 'build.boot', '.sdkmanrc', 'mvnvm.properties']
 
-[nim]
-symbol = ''
-style = 'fg:dark-fg bg:gold'
-format = '[ $symbol ($version) ]($style)'
-
 [nodejs]
 symbol = ''
 style = 'fg:dark-fg bg:gold'
@@ -172,10 +168,15 @@ symbol = ''
 style = 'fg:dark-fg bg:gold'
 format = '[ $symbol ($version) ]($style)'
 
+[zig]
+symbol = ''
+style = 'fg:dark-fg bg:gold'
+format = '[ $symbol ($version) ]($style)'
+
 # Package section
 [package]
 disabled = false
-symbol = ''
+symbol = '󰏗'
 style = 'fg:dark-fg bg:gold'
 version_format = 'v${raw}'
 format = '[ $symbol $version ]($style)'
